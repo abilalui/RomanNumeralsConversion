@@ -37,19 +37,31 @@ public class RomanNumerals {
 	 * @return     returns true if there are more than three similar consecutive characters in a string, 
 	 * 			   otherwise returns false. 
 	 */
-	/**public boolean moreThanThreeConsecutiveCharacters( String str ) {
+	public boolean moreThanThreeConsecutiveCharacters( String str ) {
 		
-		// if string is less than 4 character our result is false
-		if ( str.length() < 4 ) {
-			return false;
-		}
-		
-		while ( str.length() > 4 ) {
+		// Checking str for having three consecutive characters 
+		while ( str.length() > 3 ) {
 			
+			if ( str.charAt(0) == str.charAt(1) && str.charAt(0) == str.charAt(2) &&
+				 str.charAt(0) == str.charAt(3) ) {
+				return true;
+			}
+			
+			if ( str.charAt(0) == str.charAt(1) && str.charAt(0) == str.charAt(2)) {
+				str = str.substring(2);
+				break;
+			}
+			
+			if ( str.charAt(0) == str.charAt(1) ) {
+				str = str.substring(1);
+				break;
+			}
+			
+			str = str.substring(1);
 		}
 		
-		
-	}**/
+		return false;
+	}
 	
 	
 	/**
